@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kaizen Zuru Primary Page</title>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    </head>
+    <style>
+        body {
+            font-family: 'Montserrat';font-size: 22px;
+        }
+        hr { margin:  50px 100px; }
+        #grad1 {
+            background: rgb(102,166,255) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background: linear-gradient(to bottom right, rgba(102,166,255,1) 0%, rgba(102,126,234,1) 35%, rgba(118,75,162,1) 100%) no-repeat center center fixed;
+        }
+    </style>
+    <body id="grad1">
+        <h1 style="text-align: center; font-size:6vw; color:#4d1933"><strong>Kaizen Zuru</strong></h1>
+        <hr width="75%">
+        <p style = "position:relative; bottom:0; right:0; width:600px; height:200px; border: 3px solid #666333; font: size 3vw"><strong>helol</strong></p>
+    </body>
+</html>
