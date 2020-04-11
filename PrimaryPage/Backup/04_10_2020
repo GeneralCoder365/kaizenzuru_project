@@ -5,24 +5,118 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kaizen Zuru Primary Page</title>
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <div class="buttonsContainer">
+            <!--<a href="#" class="loginButton">Login</a> 
+            <a href="#" class="signUpButton">Sign Up</a>-->
+            <br class="myBR_top">
+            <h1 style="text-align: center; font-size:2.5vw; color:#ce8ead; padding: 0px; margin-bottom: 0px;">
+                <strong>Kaizen Zuru</strong></h1>
+            <button class="loginButton">Login</button>
+            <button class="signUpButton">Sign Up</button>
+        </div>
     </head>
     <style>
+        html, body {
+            margin:0;
+            padding:0;
+        }
         body {
             font-family: 'Montserrat';font-size: 22px;
         }
-        hr { margin:  50px 100px; }
         #grad1 {
-            background: rgb(102,166,255) no-repeat center center fixed;
+            /*background: rgb(102,166,255) no-repeat center center fixed;*/
+            background-size: cover;
+            /*background:url(https://i.pinimg.com/originals/01/fc/e0/01fce0562f8a94a727781d572619c4da.jpg) no-repeat center center fixed;*/
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
-            background-size: cover;
-            background: linear-gradient(to bottom right, rgba(102,166,255,1) 0%, rgba(102,126,234,1) 35%, rgba(118,75,162,1) 100%) no-repeat center center fixed;
+            background: linear-gradient(to bottom right, rgba(102,166,255,1) 0%, rgba(102,126,234,1) 35%, 
+            rgba(118,75,162,1) 100%) no-repeat center center fixed;
         }
+        p {
+            padding: 30px;
+        }
+
+        .myBR_top{
+            display: block; /* makes it have a width */
+            content: ""; /* clears default height */
+            margin-top: 0;
+        }
+        .loginButton {
+            margin-left:20%;
+            margin-bottom: 0.5%;
+            margin-top: 1%;
+	        box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	        /*background:linear-gradient(to bottom right, #eeab46 5%, #29a809 100%);
+            background-color:#eeab46;*/
+            background:url(https://hgtvhome.sndimg.com/content/dam/images/hgrm/fullset/2011/7/20/0/TS-87518231_finished-wood-1_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1405377952424.jpeg) no-repeat;
+	        border-radius:6px;
+	        border:1px solid #124d77;
+	        display:inline-block;
+	        cursor:pointer;
+	        color:#ffffff;
+	        font-family:Arial;
+	        font-size:22px;
+	        padding:10px 30px;
+	        text-decoration:none;
+	        text-shadow:0px 1px 0px #154682;
+        }
+        .loginButton:hover {
+	        /*background:linear-gradient(to bottom, #a81c09 5%, #eeab46 100%);
+            background-color:#a81c09;*/
+            background:url(https://www.cherokeewood.com/wp-content/uploads/2015/11/PurpleHeart_veneer.jpg) no-repeat;
+        }
+        .loginButton:active {
+            position:relative;
+	        top:1px;
+        }
+
+        .signUpButton {
+            margin-top: 1%;
+            margin-left:1%;
+            margin-bottom: 1%;
+	        box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	        background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSB2G-bpEIDuscTx4JzTAEC7hmWbIf_s8ix3HoxI1f_QU0kwsRw&usqp=CAU) no-repeat;
+	        border-radius:6px;
+	        border:1px solid #124d77;
+	        display:inline-block;
+	        cursor:pointer;
+	        color:#ffffff;
+	        font-family:Arial;
+	        font-size:22px;
+	        padding:10px 20px;
+	        text-decoration:none;
+	        text-shadow:0px 1px 0px #154682;
+        }
+        .signUpButton:hover {
+	        background:url(https://image.shutterstock.com/image-photo/green-wood-texture-260nw-409058425.jpg) no-repeat;
+        }
+        .signUpButton:active {
+	        position:relative;
+	        top:1px;
+        }
+        .buttonContainer{
+            margin: 0 0 0 0;
+            cursor: pointer;
+            display:inline-block;
+            text-align: center;
+        }
+        div{
+            background:url(https://i.pinimg.com/originals/01/fc/e0/01fce0562f8a94a727781d572619c4da.jpg) no-repeat center center fixed;
+            margin-top: 0; 
+        }
+        h1{
+            margin: 0;
+            margin-left: 43%;
+            margin-top: 0;
+            display: inline;
+            vertical-align: middle;
+        }
+
     </style>
     <body id="grad1">
-        <h1 style="text-align: center; font-size:6vw; color:#4d1933"><strong>Kaizen Zuru</strong></h1>
-        <hr width="75%">
-        <p style = "position:relative; bottom:0; right:0; width:600px; height:200px; border: 3px solid #666333; font: size 3vw"><strong>helol</strong></p>
+
+        <hr width="100%" style="margin-top: 0;">
+
     </body>
 </html>
