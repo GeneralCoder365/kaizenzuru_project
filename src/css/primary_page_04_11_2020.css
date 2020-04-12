@@ -1,0 +1,51 @@
+html, body {
+    margin:0;
+    padding:0;
+}
+body {
+    font-family: 'Montserrat';font-size: 22px;
+}
+#grad1 {
+    /*background: rgb(102,166,255) no-repeat center center fixed;*/
+    background-size: cover;
+    /*background:url(https://i.pinimg.com/originals/01/fc/e0/01fce0562f8a94a727781d572619c4da.jpg) no-repeat center center fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background: linear-gradient(to bottom right, rgba(102,166,255,1) 0%, rgba(102,126,234,1) 35%, 
+    rgba(118,75,162,1) 100%) no-repeat center center fixed;
+}
+
+.logo{
+    width: 15%;
+    height: 15%;
+    padding-right: 10px;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 100%;
+   }
+}
+.navbar-nav > li{
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+.row1 {
+    margin-left: 0.1%;
+    width:100%;
+    background-color: rgb(248, 248, 248);
+}
+
+.card {
+    background-color: rgb(248, 248, 248);
+}
+
+.akzCard {
+    border: none;
+}
+
+.qsCard {
+    border: none;
+}
