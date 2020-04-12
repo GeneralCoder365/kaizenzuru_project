@@ -1,1 +1,1 @@
-# Kaizen-Zuru
+# kaizenzuru_project
