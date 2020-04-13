@@ -1,0 +1,49 @@
+html, body {
+    margin:0;
+    padding:2.5px;
+}
+
+#grad2 {
+    background: rgb(102,166,255) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background: linear-gradient(to bottom right, rgba(102,166,255,1) 0%, rgba(102,126,234,1) 35%, 
+    rgba(118,75,162,1) 100%) no-repeat center center fixed;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        max-height: 100%;
+   }
+   .jumbotron {
+        background-size: contain;
+        max-width: 100%;
+        max-height: 100%
+   }
+}
+
+.formHolder{
+    height: 100vh;
+    margin-bottom: 0;
+}
+
+.label{
+    font-size: 16pt;
+}
+
+img { 
+    display:block; 
+}
+
+.anchor:focus {
+    border: 2px solid blue;
+}
+
+#cancelLabel {
+    margin-left: 90%;
+}
