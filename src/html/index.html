@@ -9,7 +9,9 @@
         <link rel="stylesheet" type="text/css" href="../css/index.css">
     </head>
     <body id="grad1">
+        <!--creates bootstrap container-->
         <div class="container">
+            <!--sets up nav bar-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">
                     <img class="logo" src = "../images/kz_logo.png" alt = "logo">
@@ -22,18 +24,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <!--scrolls to about us section-->
                             <a class="nav-link" href="#aboutUsSection">About Us</a>
                         </li>
                         <li class="nav-item">
+                            <!--opens modal login form-->
                             <a class="nav-link trigger-btn" href="#loginModal" data-toggle="modal">Login</a>
                         </li>
                         <li class="nav-item">
+                            <!--redirects to signup page-->
                             <a class="nav-link" href="../html/signUp.html">Sign Up</a>
                         </li>
                     </ul>
                 </div>
             </nav>
 
+            <!--sets up jumbotron-->
             <div class="jumbotron jumbotron1">
                 <h1 class="display-4">What is it?</h1>
                 <p class="lead">Kaizen Zuru is a website made for self improvement. It is based off of the Japanese Tamagachi Toy.
@@ -41,7 +47,7 @@
                     grow and develop alongside it. For more information, please read the guide below.</p>
             
                 <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                    <a class="btn btn-primary btn-lg" href="#aboutUsSection" role="button">Learn more</a>
                 </p>
             </div>
             <div class="row row1 rounded-bottom">
@@ -82,10 +88,13 @@
                     </div>
                 </div>
             </div>
+            <!--sets up login modal form-->
             <div id="loginModal" class="modal fade">
                 <div class="modal-dialog modal-login">
                     <div class="modal-content">
-                        <form action="../html/signUp.html" method="post">
+                        <!--form action chooses where to send form information-->
+                        <!--onsubmit opens next page(home page) in new tab-->
+                        <form action="/action_page.php" method="post" onsubmit="window.open('../html/index.html')">
                             <div class="modal-header">				
                                 <h4 class="modal-title">Login</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

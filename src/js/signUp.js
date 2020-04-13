@@ -1,3 +1,4 @@
+//replaces text in dropdown for colorSelect to selected option
 $(function(){
   
     $(".dropdown-menu a").click(function(){
@@ -5,3 +6,4 @@ $(function(){
        $(".btn:first-child").val($(this).text());
     });
 });
+

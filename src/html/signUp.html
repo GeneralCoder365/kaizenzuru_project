@@ -10,9 +10,15 @@
     </head>
 
     <body id="grad2">
+        <!--creates bootstrap container-->
         <div class="container">
+        <!--sets up jumbotron-->
         <div class="jumbotron w-100 h-100 formHolder">
+            <!--sets up internal form container-->
             <div class="container">
+                <!--form action chooses where to send form information-->
+                <!--onsubmit opens next page(home page) in new tab-->
+                <form action="/action_page.php" method="post" onsubmit="window.open('../html/index.html')">
                 <div class="form-group">
                     <label id ="usernameLabel" class="label">Enter a Username</label>
                     <label id="usernameDescription"> (4-10 Characters, cannot change later)</label>
@@ -26,11 +32,34 @@
                     <input type="text" class="form-control" required="required">
                 </div>
 
+                <!--need to make dropdown required-->
+                <div class="form-group">
+                    <label id="colorLabel" class="label">Choose a Color</label>
+                    <label id="colorDescription">(pick a color from the dropdown menu)</label>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Color</button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Red</a>
+                            <a href="#" class="dropdown-item">Blue</a>
+                            <a href="#" class="dropdown-item">Green</a>
+                            <a href="#" class="dropdown-item">Yellow</a>
+                            <a href="#" class="dropdown-item">White</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id ="avatarLabel" class="label">Enter an Avatar Name</label>
+                    <label id="avatarDescription"> (4-10 Characters, can be changed in settings)</label>
+                    <input type="text" class="form-control" required="required">
+                </div>
+
                 <div class="form-group">
                     <label id="chooseLabel" class="label">Choose a Character Shape</label>
                     <label id="chooseDescription">(click on a shape to select it)</label>
                 </div>
-
+                <!--need to make shape select required-->
+                <!--need to retain focus on selected shape after moving on to next item-->
                 <div class="form-group">
                     <div id="shapes">
                         <div class="row">
@@ -63,38 +92,18 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label id="colorLabel" class="label">Choose a Color</label>
-                    <label id="colorDescription">(pick a color from the dropdown menu)</label>
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Color</button>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Red</a>
-                            <a href="#" class="dropdown-item">Blue</a>
-                            <a href="#" class="dropdown-item">Green</a>
-                            <a href="#" class="dropdown-item">Yellow</a>
-                            <a href="#" class="dropdown-item">White</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label id ="avatarLabel" class="label">Enter an Avatar Name</label>
-                    <label id="avatarDescription"> (4-10 Characters, can be changed in settings)</label>
-                    <input type="text" class="form-control" required="required">
-                </div>
-
                 <div id="confirm" class="form-group">
                     <label id ="confirmLabel" class="label">Click to Start a New Chapter in Your Life</label>
                     <label id="confirmDescription"> (P.S. You're still going to have to work hard to improve)</label>
                     <div>
-                        <label id ="confirmButtonContainer"><br><a id="confirmButton" class="btn btn-primary btn-lg" href="#" role="button">Confirm</a></label>
+                        <label><br><input id="confirmButton_submitForm" type="submit" class="btn btn-primary pull-right" value="Confirm"></label>
                     </div>
                 </div>
 
                 <div id="cancel" class="form-group">
                     <label id ="cancelLabel">Click to Cancel <br> <a id="cancelButton" class="btn btn-danger btn-lg" href="../html/index.html" role="button">Cancel</a></label>
                 </div>
+            </form>
             </div>
         </div>
     </div>
