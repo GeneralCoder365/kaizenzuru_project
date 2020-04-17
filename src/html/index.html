@@ -9,6 +9,9 @@
         <link rel="stylesheet" type="text/css" href="../css/index.css">
     </head>
     <body id="grad1">
+
+
+
         <!--creates bootstrap container-->
         <div class="container">
             <!--sets up nav bar-->
@@ -29,7 +32,7 @@
                         </li>
                         <li class="nav-item">
                             <!--opens modal login form-->
-                            <a class="nav-link trigger-btn" href="#loginModal" data-toggle="modal">Login</a>
+                            <a class="nav-link trigger-btn" href="#loginModal" data-toggle="modal">Login/Sign Up</a>
                         </li>
                         <li class="nav-item">
                             <!--redirects to signup page-->
@@ -38,6 +41,9 @@
                     </ul>
                 </div>
             </nav>
+
+
+
 
             <!--sets up jumbotron-->
             <div class="jumbotron jumbotron1">
@@ -88,6 +94,11 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
             <!--sets up login modal form-->
             <!--Get sign in with google up and running: https://developers.google.com/identity/sign-in/web-->
             <div id="loginModal" class="modal fade">
@@ -115,6 +126,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
+                                <label class="clearfix pull-left">Don't have an account?</label>
+                                <a id="signUpLink" href="../html/signUp.html" class="clearfix text-muted pull-left">Sign Up</a>
                                 <label class="checkbox-inline pull-left"><input type="checkbox"> Remember me</label>
                                 <input type="submit" class="btn btn-primary pull-right" value="Login">
                             </div>
@@ -124,6 +137,10 @@
             </div>
         </div>
         <p></p>
+
+
+
+
 
         <!--<script src="../js/jquery.min.js"></script>
         <script src="../js/popper.min.js"></script>-->
