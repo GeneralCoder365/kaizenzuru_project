@@ -5,6 +5,13 @@ document.getElementById("avatarnameSelectAlert").style.visibility = "hidden";
 document.getElementById("shapeSelectAlert").style.visibility = "hidden";
 document.getElementById("fieldFillAlert").style.visibility = "hidden";
 
+document.getElementById("usernameInvalidAlert").style.visibility = "hidden";
+document.getElementById("passwordInvalidAlert").style.visibility = "hidden";
+document.getElementById("avatarnameInvalidAlert").style.visibility = "hidden";
+
+document.getElementById("usernameTakenAlert").style.visibility = "hidden";
+document.getElementById("avatarnameTakenAlert").style.visibility = "hidden";
+
 //fix problem with submitting form without entering all required fields 
 //current testing solution: copy getting input like avatar color for all other fields and try to get to work
 
@@ -15,6 +22,9 @@ var avatarColor = "";
 var avatarname = "";
 var avatarShape = "";
 var shapes = ["circle", "triangle", "square", "pentagon", "hexagon"];
+
+
+
 
 function setUsername() {
   username = document.getElementById("usernameInput").value;
@@ -44,6 +54,9 @@ function setValues() {
 }
 
 
+
+
+
 //adds border to the selected shape
 //deletes all borders first, then borders the correct image
 function changeShape(shape){
@@ -62,67 +75,12 @@ function changeShape(shape){
         avatarShape = shapes[i];
         document.getElementById(buttonType).style.border = "3px solid black";
       }
-      
-      /*for (var k = i; k < shapes.length; k++){
-        buttonType = 
-        document.getElementById(buttonType).style.border = "";
-      }*/
 
     }
     console.log("Avatar Shape: "+avatarShape);
-
-    /*if (shape == "circle"){
-      avatarShape = "circle";
-      document.getElementById("circleButton").style.border = "2px solid black"; 
-
-    }
-    else if (shape == "triangle"){
-      avatarShape = "triangle";
-    }
-    else if (shape == "square"){
-      avatarShape = "shape";
-    }
-    else if (shape == "pentagon"){
-      avatarShape = "pentagon";
-    }
-    else if (shape == "hexagon"){
-      avatarShape = "hexagon";
-    }
-
-    console.log(avatarShape);*/
 }
 
-/*function usernameRequired() {
-  if(avatarShape=="") {
-    stopSubmit();
-  } else {
-    return true;
-  }
-}
 
-function passwordRequired() {
-  if(avatarShape=="") {
-    stopSubmit();
-  } else {
-    return true;
-  }
-}
-
-function colorRequired() {
-  if(avatarShape=="") {
-    stopSubmit();
-  } else {
-    return true;
-  }
-}
-
-function avatarnameRequired() {
-  if(avatarShape=="") {
-    stopSubmit();
-  } else {
-    return true;
-  }
-}*/
 
 
 function usernameRequired() {
@@ -171,27 +129,35 @@ function shapeRequired() {
     }
 }
 
+
+
+
+function checkSubmit() {
+  if((usernameRequired()==false)||(passwordRequired()==false)||(avatarColorRequired()==false)||(avatarnameRequired()==false)||(shapeRequired()==false)) {
+    document.getElementById("fieldFillAlert").style.visibility = "visible";
+    return false;
+  } else if((usernameRequired()==true)&&(passwordRequired()==true)&&(avatarColorRequired()==true)&&(avatarnameRequired()==true)&&(shapeRequired()==true)) {
+    document.getElementById("fieldFillAlert").style.visibility = "hidden";
+    return true;
+  } else {
+    document.getElementById("fieldFillAlert").style.visibility = "visible";
+    return false;
+  }
+}
+
 function whenSubmit() {
   //setValues();
+  usernameRequired();
+  passwordRequired();
+  avatarColorRequired();
+  avatarnameRequired();
+  shapeRequired();
   checkSubmit();
   if(checkSubmit()==false) {
     return false;
   } else if(checkSubmit()==true) {
     return true;
   } else {
-    return false;
-  }
-}
-
-function checkSubmit() {
-  if((usernameRequired()==false)||(passwordRequired()==false)||(avatarColorRequired()==false)||(avatarnameRequired()==false)||(shapeRequired()==false)) {
-    document.getElementById("fieldFillAlert").style.visibility = "visible";
-    return false;
-  } else if((usernameRequired()==true)||(passwordRequired()==true)||(avatarColorRequired()==true)||(avatarnameRequired()==true)||(shapeRequired()==true)) {
-    document.getElementById("fieldFillAlert").style.visibility = "hidden";
-    return true;
-  } else {
-    document.getElementById("fieldFillAlert").style.visibility = "visible";
     return false;
   }
 }
