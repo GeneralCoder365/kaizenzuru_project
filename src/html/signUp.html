@@ -21,12 +21,18 @@
                 <!--form action chooses where to send form information-->
                 <!--onsubmit opens next page(home page) in new tab-->
                 <form action="/action_page.php" method="post" onsubmit="window.open('../html/index.html')">
+
                 <!--Get sign up with google up and running: https://developers.google.com/identity/sign-in/web-->
                     <!--When using this, default username should be name from google account brought to lowercase and into one word(remove spaces)-->
                 <div class="form-group">
+                    <label id="infoLabel" class="label">All of the options below can be changed later</label>
+                    <br><br>
                     <label id ="usernameLabel" class="label">Enter a Username</label>
-                    <label id="usernameDescription"> (4-10 Characters, can be changed later)</label>
+                    <label id="usernameDescription"> (4-10 Characters)</label>
                     <input type="text" class="form-control" required="required">
+                    <!--<div id="usernameSelectAlert" class="alert alert-danger">
+                        <strong>Please type in a username!</strong>
+                    </div>-->
                 </div>
 
                 <div class="form-group">
@@ -34,19 +40,25 @@
                     <label id="passwordDescription">(at least 6 characters, 1 number, 
                         1 special character, and 1 uppercase letter)</label>
                     <input type="password" class="form-control" required="required">
+                    <!--<div id="passwordSelectAlert" class="alert alert-danger">
+                        <strong>Please type in a password!</strong>
+                    </div>-->
                 </div>
 
                 <div class="form-group">
                     <label id="colorLabel" class="label">Choose a Color</label>
                     <label id="colorDescription">(pick a color from the dropdown menu)</label>
                     <div id="colorDropdown">
-                        <select class="selectpicker show-tick" title="Choose Color" data-style="btn-success" data-width="fit" required>
+                        <select id="colorSelector" class="selectpicker show-tick" title="Choose Color" data-style="btn-success" data-width="fit" required>
                             <option>Red</option>
                             <option>Blue</option>
                             <option>Green</option>
                             <option>Yellow</option>
                             <option>White</option>
                         </select>
+                        <!--<div id="colorSelectAlert" class="alert alert-danger">
+                            <strong>Please select a color!</strong>
+                        </div>-->
                     </div>
                     <!--<div class="dropdown">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Color</button>
@@ -62,16 +74,18 @@
 
                 <div class="form-group">
                     <label id ="avatarLabel" class="label">Enter an Avatar Name</label>
-                    <label id="avatarDescription"> (4-10 Characters, can be changed in settings)</label>
+                    <label id="avatarDescription"> (4-10 Character)</label>
                     <input type="text" class="form-control" required="required">
+                    <!--<div id="avatarnameSelectAlert" class="alert alert-danger">
+                        <strong>Please type in an avatar name!</strong>
+                    </div>-->
                 </div>
 
                 <div class="form-group">
                     <label id="chooseLabel" class="label">Choose a Character Shape</label>
                     <label id="chooseDescription">(click on a shape to select it)</label>
                 </div>
-                <!--need to make shape select required-->
-                <!--need to retain focus on selected shape after moving on to next item-->
+
                 <div class="form-group">
                     <div id="shapes">
                         <!--Redesign:
@@ -86,41 +100,44 @@
                                     [1] adds border to currently selected shape
                                     [2] removes border from all other shapes(makes sure none of them seem 
                                     selected to user)-->
+
                         <div class="row">
-                            <div id="circle_avatar" class="col-lg-2 d-flex align-items-stretch">
-                                <a class="anchor" href="#">
-                                    <p class="card-text text-left">Circle <img class="circle_pic" src = "../images/circle_avatar_signup.png" alt = "Circle"> </p>
-                                </a>
+                            <div class="col- d-flex align-items-stretch shapeColumn">
+                                <p>Circle <br> <button id="circleButton" type="button" class="shapeButton btn btn-white btn-lg" 
+                                    onclick="changeShape('circle')" data-width="fit"></button></p>
                             </div>
-                            <div id="triangle_avatar" class="col-lg-2 d-flex align-items-stretch">
-                                <a class="anchor" href="#">
-                                    <p class="card-text text-left">Triangle <img class="triangle_pic" src = "../images/triangle_avatar_signup.png" alt = "Triangle"> </p>
-                                </a>
+                            <div class="col- d-flex align-items-stretch shapeColumn">
+                                <p>Triangle <br> <button id="triangleButton" type="button" class="shapeButton btn btn-white btn-lg" 
+                                    onclick="changeShape('triangle')" data-width="fit"></button></p>
                             </div>
-                            <div id="square_avatar" class="col-lg-2 d-flex align-items-stretch">
-                                <a class="anchor" href="#">
-                                    <p class="card-text text-left">Square <img class="square_pic" src = "../images/square_avatar_signup.png" alt = "Square"> </p>
-                                </a>
+                            <div class="col- d-flex align-items-stretch shapeColumn">
+                                <p>Square <br> <button id="squareButton" type="button" class="shapeButton btn btn-white btn-lg" 
+                                    onclick="changeShape('square')" data-width="fit"></button></p>
                             </div>
-                            <div id="pentagon_avatar" class="col-lg-2 d-flex align-items-stretch">
-                                <a class="anchor" href="#">
-                                    <p class="card-text text-left">Pentagon <img class="pentagon_pic" src = "../images/pentagon_avatar_signup.png" alt = "Pentagon"> </p>
-                                </a>
+                            <div class="col- d-flex align-items-stretch shapeColumn">
+                                <p>Pentagon <br> <button id="pentagonButton" type="button" class="shapeButton btn btn-white btn-lg" 
+                                    onclick="changeShape('pentagon')" data-width="fit"></button></p>
                             </div>
-                            <div id="hexagon_avatar" class="col-lg-2 d-flex align-items-stretch">
-                                <a class="anchor" href="#">
-                                    <p class="card-text text-left">Hexagon <img class="hexagon_pic" src = "../images/hexagon_avatar_signup.png" alt = "Hexagon"> </p>
-                                </a>
+                            <div class="col- d-flex align-items-stretch shapeColumn">
+                                <p>Hexagon <br> <button id="hexagonButton" type="button" class="shapeButton btn btn-white btn-lg" 
+                                    onclick="changeShape('hexagon')" data-width="fit"></button></p>
                             </div>
                         </div>
+
                     </div>
+                </div>
+
+                <div id="shapeSelectAlert" class="alert alert-danger">
+                    <strong>Please select a shape!</strong>
                 </div>
 
                 <div id="confirm" class="form-group">
                     <label id ="confirmLabel" class="label">Click Confirm to Start a New Chapter in Your Life</label>
-                    <label id="confirmDescription"> (P.S. You're still going to have to work hard to improve)</label>
+                    <label id="confirmDescription">(P.S. You're still going to have to work hard to improve)</label>
                     <div>
-                        <label><br><input id="confirmButton_submitForm" type="submit" class="btn btn-primary pull-right" value="Confirm"></label>
+                        <label><br><input id="confirmButton_submitForm" type="submit" class="btn btn-primary pull-right" 
+                            onclick="setColor(); return shapeRequired(); usernameRequired(); passwordRequired(); 
+                            colorRequired(); avatarnameRequired();" value="Confirm"></label>
                     </div>
                 </div>
 
@@ -142,6 +159,7 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
     </body>
 </html>
 

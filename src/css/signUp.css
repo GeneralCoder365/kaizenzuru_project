@@ -47,3 +47,47 @@ img {
 #cancelLabel {
     margin-left: 90%;
 }
+
+.shapeColumn {
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.shapeButton {
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(195, 221, 217);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    color: #ccc3c3;
+    font-weight: bold;
+    margin-right: 30px;
+    font-size: medium;
+}
+
+#circleButton {
+    background-image: url("../images/circle_avatar_signup.png");
+}
+
+#triangleButton {
+    background-image: url("../images/triangle_avatar_signup.png");
+    position: relative;
+}
+
+#squareButton {
+    background-image: url("../images/square_avatar_signup.png");
+    /*background-size: 80px;
+    padding: 30px;*/
+}
+
+#pentagonButton {
+    background-image: url("../images/pentagon_avatar_signup.png");
+}
+
+
+#hexagonButton {
+    background-image: url("../images/hexagon_avatar_signup.png");
+}
