@@ -29,7 +29,7 @@
                     <br><br>
                     <label id ="usernameLabel" class="label">Enter a Username</label>
                     <label id="usernameDescription"> (4-10 Characters)</label>
-                    <label id="usernameSelectAlert">x Username not specified!</label>
+                    <label id="usernameSelectAlert" class="alertRed">x Username not specified!</label>
                     <input id="usernameInput" type="text" class="form-control" required="required">
                     <!--<div id="usernameSelectAlert" class="alert alert-danger">
                         <strong>Please type in a username!</strong>
@@ -40,7 +40,7 @@
                     <label id ="passwordLabel" class="label">Enter a Password </label>
                     <label id="passwordDescription">(at least 6 characters, 1 number, 
                         1 special character, and 1 uppercase letter)</label>
-                    <label id="passwordSelectAlert">x Password not specified!</label>
+                    <label id="passwordSelectAlert" class="alertRed">x Password not specified!</label>
                     <input id="passwordInput" type="password" class="form-control" required="required">
                     <!--<div id="passwordSelectAlert" class="alert alert-danger">
                         <strong>Please type in a password!</strong>
@@ -50,7 +50,7 @@
                 <div class="form-group">
                     <label id="colorLabel" class="label">Choose a Color</label>
                     <label id="colorDescription">(pick a color from the dropdown menu)</label>
-                    <label id="colorSelectAlert">x Color not specified!</label>
+                    <label id="colorSelectAlert" class="alertRed">x Color not specified!</label>
                     <div id="colorDropdown">
                         <select id="colorSelector" class="selectpicker show-tick" title="Choose Color" data-style="btn-success" data-width="fit" required>
                             <option>Red</option>
@@ -78,7 +78,7 @@
                 <div class="form-group">
                     <label id ="avatarLabel" class="label">Enter an Avatar Name</label>
                     <label id="avatarDescription"> (4-10 Character)</label>
-                    <label id="avatarnameSelectAlert">x Avatar name not specified!</label>
+                    <label id="avatarnameSelectAlert" class="alertRed">x Avatar name not specified!</label>
                     <input id="avatarnameInput" type="text" class="form-control" required="required">
                     <!--<div id="avatarnameSelectAlert" class="alert alert-danger">
                         <strong>Please type in an avatar name!</strong>
@@ -88,7 +88,7 @@
                 <div class="form-group">
                     <label id="chooseLabel" class="label">Choose a Character Shape</label>
                     <label id="chooseDescription">(click on a shape to select it)</label>
-                    <label id="shapeSelectAlert">x Avatar shape not specified!</label>
+                    <label id="shapeSelectAlert" class="alertRed">x Avatar shape not specified!</label>
                 </div>
 
                 <div class="form-group">
@@ -141,7 +141,7 @@
                     <label id="confirmDescription">(P.S. You're still going to have to work hard to improve)</label>
                     <div>
                         <label><br><input id="confirmButton_submitForm" type="submit" class="btn btn-primary pull-right" 
-                            onclick="whenSubmit(); return whenSubmit();" value="Confirm"></label>
+                            onclick="setValues(); return whenSubmit();" value="Confirm"></label>
                     </div>
                 </div>
 

@@ -48,6 +48,13 @@ img {
     margin-left: 90%;
 }
 
+
+.alertRed {
+    color: red;
+}
+
+
+
 .shapeColumn {
     margin-left: 20px;
     margin-right: 50px;

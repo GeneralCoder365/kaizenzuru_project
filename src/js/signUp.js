@@ -172,7 +172,7 @@ function shapeRequired() {
 }
 
 function whenSubmit() {
-  setValues();
+  //setValues();
   checkSubmit();
   if(checkSubmit()==false) {
     return false;
