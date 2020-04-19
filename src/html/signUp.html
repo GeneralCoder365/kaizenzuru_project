@@ -28,7 +28,7 @@
                     <label id="infoLabel" class="label">All of the options below can be changed later</label>
                     <br><br>
                     <label id ="usernameLabel" class="label">Enter a Username</label>
-                    <label id="usernameDescription"> (4-10 Characters)</label>
+                    <label id="usernameDescription"> (4-10 Characters, no spaces)</label>
                     <label id="usernameSelectAlert" class="alertRed">x Username not specified!</label>
                     <label id="usernameInvalidAlert" class="alertRed">x Username does not meet the requirements!</label>
                     <label id="usernameTakenAlert" class="alertRed">x Username already taken!</label>
@@ -41,10 +41,11 @@
                 <div class="form-group">
                     <label id ="passwordLabel" class="label">Enter a Password </label>
                     <label id="passwordDescription">(6-15 characters: 1 number, 
-                        1 special character, and 1 uppercase letter)</label>
+                        1 special character, and 1 uppercase letter, no spaces)</label>
                     <label id="passwordSelectAlert" class="alertRed">x Password not specified!</label>
                     <label id="passwordInvalidAlert" class="alertRed">x Password does not meet the requirements!</label>
-                    <input id="passwordInput" type="password" class="form-control" required="required">
+                    <!--temporarily removing type="password" from line 48-->
+                    <input id="passwordInput" type="text" class="form-control" required="required">
                     <!--<div id="passwordSelectAlert" class="alert alert-danger">
                         <strong>Please type in a password!</strong>
                     </div>-->
@@ -80,7 +81,7 @@
 
                 <div class="form-group">
                     <label id ="avatarLabel" class="label">Enter an Avatar Name</label>
-                    <label id="avatarDescription"> (4-10 Characters)</label>
+                    <label id="avatarDescription"> (4-10 Characters, no spaces)</label>
                     <label id="avatarnameSelectAlert" class="alertRed">x Avatar name not specified!</label>
                     <label id="avatarnameInvalidAlert" class="alertRed">x Avatar name does not meet the requirements!</label>
                     <label id="avatarnameTakenAlert" class="alertRed">x Avatar name already taken!</label>

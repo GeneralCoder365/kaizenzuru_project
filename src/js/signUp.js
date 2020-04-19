@@ -29,6 +29,7 @@ var shapes = ["circle", "triangle", "square", "pentagon", "hexagon"];
 function setUsername() {
   username = document.getElementById("usernameInput").value;
   console.log("Username: "+ username);
+
 }
 function setPassword() {
   password = document.getElementById("passwordInput").value;
@@ -80,6 +81,107 @@ function changeShape(shape){
     console.log("Avatar Shape: "+avatarShape);
 }
 
+var usernameLength = "";
+var passwordLength = "";
+var avatarnameLength = "";
+
+var usernamePars = [];
+var passwordPars = [];
+var avatarnamePars = [];
+
+var passwordNum = false;
+var passwordUppercase = false;
+var passwordSpecial = false;
+
+var usernameSpace = false;
+var passwordSpace = false;
+var avatarnameSpace = false;
+
+var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", ":", ";", "<", ">", "?"
+                          , "/", "|"];
+var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
+                        "T", "U", "V", "W", "X", "Y", "Z"];
+
+//string comparison str1.localeCompare(str2);
+function usernameRequirements() {
+  usernameLength = username.length;
+  usernamePars = username.split("");
+  if(usernamePars.includes(" ")) {
+    usernameSpace = true;
+  } else {
+    usernameSpace = false;
+  }
+  if((usernameLength<4)||(usernameLength>10)||(usernameSpace==true)) {
+    document.getElementById("usernameInvalidAlert").style.visibility = "visible";
+    return false;
+  } else {
+    document.getElementById("usernameInvalidAlert").style.visibility = "hidden";
+    return true;
+  }
+}
+
+function pasSetup() {
+  passwordUppercase = false;
+  passwordNum = false;
+  passwordSpecial = false;
+}
+
+
+function passwordRequirements() {
+  pasSetup();
+  passwordLength = password.length;
+  passwordPars = password.split("");
+  //checks for spaces
+  if(passwordPars.includes(" ")) {
+    passwordSpace = true;
+  } else {
+    passwordSpace = false;
+  }
+  //checks for special characters
+  for (var j = 0; j < specialCharacters.length; j++){
+    if(passwordPars.includes(specialCharacters[j])) {
+        console.log("helo");
+        passwordSpecial = true;
+    }
+  }
+  //checks for numbers
+  for (var k = 0; k < numbers.length; k++){
+      if (passwordPars.includes(numbers[k])){
+           passwordNum = true;
+      } 
+  }
+  //checks for Uppercase letters
+  for (var u = 0; u < uppercaseLetters.length; u++){
+    if (passwordPars.includes(uppercaseLetters[u])){
+      passwordUppercase = true;
+    }
+  }
+  if((passwordLength<6) || (passwordLength>15) || (passwordSpace==true) || (passwordNum==false) || (passwordSpecial==false) || (passwordUppercase==false)) {
+    document.getElementById("passwordInvalidAlert").style.visibility = "visible";
+    return false;
+  } else {
+    document.getElementById("passwordInvalidAlert").style.visibility = "hidden";
+    return true;
+  }
+}
+
+function avatarnameRequirements() {
+  avatarnameLength = avatarname.length;
+  avatarnamePars = avatarname.split("");
+  if(avatarnamePars.includes(" ")) {
+    avatarnameSpace = true;
+  } else {
+    avatarnameSpace = false;
+  }
+  if((avatarnameLength<4)||(avatarnameLength>10)||(avatarnameSpace==true)) {
+    document.getElementById("avatarnameInvalidAlert").style.visibility = "visible";
+    return false;
+  } else {
+    document.getElementById("avatarnameInvalidAlert").style.visibility = "hidden";
+    return true;
+  }
+}
 
 
 
@@ -129,14 +231,34 @@ function shapeRequired() {
     }
 }
 
+function usReqMet() {
+  if(usernameRequired()==true) {
+    return usernameRequirements();
+  }
+}
+function pwdReqMet() {
+  if(passwordRequired()==true) {
+    return passwordRequirements();
+  }
+}
+function avReqMet() {
+  if(avatarnameRequired()==true) {
+    return avatarnameRequirements();
+  }
+}
+
 
 
 
 function checkSubmit() {
-  if((usernameRequired()==false)||(passwordRequired()==false)||(avatarColorRequired()==false)||(avatarnameRequired()==false)||(shapeRequired()==false)) {
+  // || (pwdReqMet()==false)
+  if((usernameRequired()==false) || (passwordRequired()==false) || (avatarColorRequired()==false) || (avatarnameRequired()==false) || (shapeRequired()==false) ||
+  (usReqMet()==false) || (pwdReqMet()==false) || (avReqMet()==false)) {
     document.getElementById("fieldFillAlert").style.visibility = "visible";
     return false;
-  } else if((usernameRequired()==true)&&(passwordRequired()==true)&&(avatarColorRequired()==true)&&(avatarnameRequired()==true)&&(shapeRequired()==true)) {
+  } else if((usernameRequired()==true) && (passwordRequired()==true) && (avatarColorRequired()==true) && (avatarnameRequired()==true) && (shapeRequired()==true) && 
+  (usReqMet()==true) && (pwdReqMet()==true) && (avReqMet()==true)) {
+    // && (pwdReqMet()==true)
     document.getElementById("fieldFillAlert").style.visibility = "hidden";
     return true;
   } else {
@@ -152,6 +274,9 @@ function whenSubmit() {
   avatarColorRequired();
   avatarnameRequired();
   shapeRequired();
+  usReqMet();
+  pwdReqMet();
+  avReqMet();
   checkSubmit();
   if(checkSubmit()==false) {
     return false;
