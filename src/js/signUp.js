@@ -1,23 +1,24 @@
-document.getElementById("usernameSelectAlert").style.visibility = "hidden";
-document.getElementById("passwordSelectAlert").style.visibility = "hidden";
-document.getElementById("colorSelectAlert").style.visibility = "hidden";
-document.getElementById("avatarnameSelectAlert").style.visibility = "hidden";
-document.getElementById("shapeSelectAlert").style.visibility = "hidden";
+document.getElementById("usernameSelectAlert").style.display = "none";
+document.getElementById("passwordSelectAlert").style.display = "none";
+document.getElementById("colorSelectAlert").style.display = "none";
+document.getElementById("avatarnameSelectAlert").style.display = "none";
+document.getElementById("shapeSelectAlert").style.display = "none";
+
+document.getElementById("usernameInvalidAlert").style.display = "none";
+document.getElementById("passwordInvalidAlert").style.display = "none";
+document.getElementById("avatarnameInvalidAlert").style.display = "none";
+
+document.getElementById("usernameTakenAlert").style.display = "none";;
+document.getElementById("avatarnameTakenAlert").style.display = "none";
+
 document.getElementById("fieldFillAlert").style.visibility = "hidden";
-
-document.getElementById("usernameInvalidAlert").style.visibility = "hidden";
-document.getElementById("passwordInvalidAlert").style.visibility = "hidden";
-document.getElementById("avatarnameInvalidAlert").style.visibility = "hidden";
-
-document.getElementById("usernameTakenAlert").style.visibility = "hidden";
-document.getElementById("avatarnameTakenAlert").style.visibility = "hidden";
 
 //fix problem with submitting form without entering all required fields 
 //current testing solution: copy getting input like avatar color for all other fields and try to get to work
 
 var e = document.getElementById("colorSelector");
 var username = "";
-var password = "";
+var password = ""
 var avatarColor = "";
 var avatarname = "";
 var avatarShape = "";
@@ -113,10 +114,10 @@ function usernameRequirements() {
     usernameSpace = false;
   }
   if((usernameLength<4)||(usernameLength>10)||(usernameSpace==true)) {
-    document.getElementById("usernameInvalidAlert").style.visibility = "visible";
+    document.getElementById("usernameInvalidAlert").style.display = "inline";
     return false;
   } else {
-    document.getElementById("usernameInvalidAlert").style.visibility = "hidden";
+    document.getElementById("usernameInvalidAlert").style.display = "none";
     return true;
   }
 }
@@ -158,10 +159,10 @@ function passwordRequirements() {
     }
   }
   if((passwordLength<6) || (passwordLength>15) || (passwordSpace==true) || (passwordNum==false) || (passwordSpecial==false) || (passwordUppercase==false)) {
-    document.getElementById("passwordInvalidAlert").style.visibility = "visible";
+    document.getElementById("passwordInvalidAlert").style.display = "inline";
     return false;
   } else {
-    document.getElementById("passwordInvalidAlert").style.visibility = "hidden";
+    document.getElementById("passwordInvalidAlert").style.display = "none";
     return true;
   }
 }
@@ -175,10 +176,10 @@ function avatarnameRequirements() {
     avatarnameSpace = false;
   }
   if((avatarnameLength<4)||(avatarnameLength>10)||(avatarnameSpace==true)) {
-    document.getElementById("avatarnameInvalidAlert").style.visibility = "visible";
+    document.getElementById("avatarnameInvalidAlert").style.display = "inline";
     return false;
   } else {
-    document.getElementById("avatarnameInvalidAlert").style.visibility = "hidden";
+    document.getElementById("avatarnameInvalidAlert").style.display = "none";
     return true;
   }
 }
@@ -187,46 +188,46 @@ function avatarnameRequirements() {
 
 function usernameRequired() {
   if(username=="") {
-    document.getElementById("usernameSelectAlert").style.visibility = "visible";
+    document.getElementById("usernameSelectAlert").style.display = "inline";
     return false;
   } else {
-    document.getElementById("usernameSelectAlert").style.visibility = "hidden";
+    document.getElementById("usernameSelectAlert").style.display = "none";
     return true;
   }
 }
 function passwordRequired() {
   if(password=="") {
-    document.getElementById("passwordSelectAlert").style.visibility = "visible";
+    document.getElementById("passwordSelectAlert").style.display = "inline";
     return false;
   } else {
-    document.getElementById("passwordSelectAlert").style.visibility = "hidden";
+    document.getElementById("passwordSelectAlert").style.display = "none";
     return true;
   }
 }
 function avatarColorRequired() {
   if(avatarColor=="") {
-    document.getElementById("colorSelectAlert").style.visibility = "visible";
+    document.getElementById("colorSelectAlert").style.display = "inline";
     return false;
   } else {
-    document.getElementById("colorSelectAlert").style.visibility = "hidden";
+    document.getElementById("colorSelectAlert").style.display = "none";
     return true;
   }
 }
 function avatarnameRequired() {
   if(avatarname=="") {
-    document.getElementById("avatarnameSelectAlert").style.visibility = "visible";
+    document.getElementById("avatarnameSelectAlert").style.display = "inline";
     return false;
   } else {
-    document.getElementById("avatarnameSelectAlert").style.visibility = "hidden";
+    document.getElementById("avatarnameSelectAlert").style.display = "none";
     return true;
   }
 }
 function shapeRequired() {
     if(avatarShape=="") {
-      document.getElementById("shapeSelectAlert").style.visibility = "visible";
+      document.getElementById("shapeSelectAlert").style.display = "inline";
       return false;
     } else {
-      document.getElementById("shapeSelectAlert").style.visibility = "hidden";
+      document.getElementById("shapeSelectAlert").style.display = "none";
       return true;
     }
 }
