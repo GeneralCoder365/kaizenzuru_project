@@ -24,7 +24,7 @@
 
                 <!--Get sign up with google up and running: https://developers.google.com/identity/sign-in/web-->
                     <!--When using this, default username should be name from google account brought to lowercase and into one word(remove spaces)-->
-                <div class="form-group">
+                <div class="form-group" id="usernameStuff">
                     <label id="infoLabel" class="label">All of the options below can be changed later</label>
                     <br><br>
                     <label id ="usernameLabel" class="label">Enter a Username</label>
@@ -33,12 +33,32 @@
                     <label id="usernameInvalidAlert" class="alertRed">x Username does not meet the requirements!</label>
                     <label id="usernameTakenAlert" class="alertRed">x Username already taken!</label>
                     <input id="usernameInput" type="text" class="form-control" required="required">
-                    <!--<div id="usernameSelectAlert" class="alert alert-danger">
-                        <strong>Please type in a username!</strong>
-                    </div>-->
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="nameStuff">
+                    <label id ="firstNameLabel" class="label">Enter your First Name</label>
+                    <label id="firstNameDescription"> (Start with capitalized first letter, no spaces, alphabets only)</label>
+                    <label id="firstNameSelectAlert" class="alertRed">x First name not specified!</label>
+                    <label id="firstNameInvalidAlert" class="alertRed">x First name does not meet the requirements!</label>
+                    <input id="firstNameInput" type="text" class="form-control" required="required">
+
+                    <label id ="lastNameLabel" class="label">Enter your Last Name</label>
+                    <label id="lastNameDescription"> (Start with capitalized first letter, no spaces, alphabets only)</label>
+                    <label id="lastNameSelectAlert" class="alertRed">x Last name not specified!</label>
+                    <label id="lastNameInvalidAlert" class="alertRed">x Last name does not meet the requirements!</label>
+                    <input id="lastNameInput" type="text" class="form-control" required="required">
+                </div>
+
+                <div class="form-group" id="emailStuff">
+                    <label id ="emailLabel" class="label">Enter your Email</label>
+                    <label id="emailDescription"> (Please enter a valid email)</label>
+                    <label id="emailSelectAlert" class="alertRed">x Email not specified!</label>
+                    <label id="emailInvalidAlert" class="alertRed">x Email not valid!</label>
+                    <label id="emailTakenAlert" class="alertRed">x Email already in use!</label>
+                    <input id="emailInput" type="text" class="form-control" required="required">
+                </div>
+
+                <div class="form-group" id="passwordStuff">
                     <label id ="passwordLabel" class="label">Enter a Password </label>
                     <label id="passwordDescription">(6-15 characters: 1 number, 
                         1 special character, and 1 uppercase letter, no spaces)</label>
@@ -46,12 +66,16 @@
                     <label id="passwordInvalidAlert" class="alertRed">x Password does not meet the requirements!</label>
                     <!--temporarily removing type="password" from line 48-->
                     <input id="passwordInput" type="text" class="form-control" required="required">
-                    <!--<div id="passwordSelectAlert" class="alert alert-danger">
-                        <strong>Please type in a password!</strong>
-                    </div>-->
+
+                    <label id ="confirmPasswordLabel" class="label">Confirm Password</label>
+                    <label id="confirmPasswordDescription">(Please Re-enter your Password below)</label>
+                    <label id="confirmPasswordSelectAlert" class="alertRed">x Please confirm your password!</label>
+                    <label id="confirmPasswordInvalidAlert" class="alertRed">x Passwords do not match!</label>
+                    <!--temporarily removing type="password" from line 73-->
+                    <input id="confirmPasswordInput" type="text" class="form-control" required="required">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="colorStuff">
                     <label id="colorLabel" class="label">Choose a Color</label>
                     <label id="colorDescription">(Pick a color from the dropdown menu)</label>
                     <label id="colorSelectAlert" class="alertRed">x Color not specified!</label>
@@ -63,41 +87,25 @@
                             <option>Yellow</option>
                             <option>White</option>
                         </select>
-                        <!--<div id="colorSelectAlert" class="alert alert-danger">
-                            <strong>Please select a color!</strong>
-                        </div>-->
                     </div>
-                    <!--<div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Color</button>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Red</a>
-                            <a href="#" class="dropdown-item">Blue</a>
-                            <a href="#" class="dropdown-item">Green</a>
-                            <a href="#" class="dropdown-item">Yellow</a>
-                            <a href="#" class="dropdown-item">White</a>
-                        </div>
-                    </div>-->
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="avatarnameStuff">
                     <label id ="avatarLabel" class="label">Enter an Avatar Name</label>
                     <label id="avatarDescription"> (4-10 Characters, no spaces)</label>
                     <label id="avatarnameSelectAlert" class="alertRed">x Avatar name not specified!</label>
                     <label id="avatarnameInvalidAlert" class="alertRed">x Avatar name does not meet the requirements!</label>
                     <label id="avatarnameTakenAlert" class="alertRed">x Avatar name already taken!</label>
                     <input id="avatarnameInput" type="text" class="form-control" required="required">
-                    <!--<div id="avatarnameSelectAlert" class="alert alert-danger">
-                        <strong>Please type in an avatar name!</strong>
-                    </div>-->
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="shapeStuff1">
                     <label id="chooseLabel" class="label">Choose a Character Shape</label>
                     <label id="chooseDescription">(click on a shape to select it)</label>
                     <label id="shapeSelectAlert" class="alertRed">x Avatar shape not specified!</label>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="shapeStuff2">
                     <div id="shapes">
                         <!--Redesign:
                         1) Take all images and turn into buttons
@@ -139,7 +147,7 @@
                 </div>
 
                 <div id="fieldFillAlert" class="alert alert-danger">
-                    <strong>Please fill out all fields!</strong>
+                    <strong>Please fill out all fields Correctly!</strong>
                 </div>
 
                 <div id="confirm" class="form-group">
