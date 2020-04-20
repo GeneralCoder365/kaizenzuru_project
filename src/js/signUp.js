@@ -26,7 +26,7 @@ document.getElementById("fieldFillAlert").style.visibility = "hidden";
 /*need to code in input requirements checking for:
   1) First Name(after username) - No spaces, first letter capital, alphabets only
   2) Last Name(after first name) - No spaces, first letter capital, alphabets only
-  3) Email(after last name) - Get whether email is valid or not from HTML type="email" part
+  3) Email(after last name) - Get whether email is valid or not from pattern recognition
 */
 
 var e = document.getElementById("colorSelector");
