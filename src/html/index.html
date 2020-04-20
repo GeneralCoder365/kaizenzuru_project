@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" type="text/css" href="../css/index.css">
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
     </head>
     <body id="grad1">
 
@@ -107,7 +110,11 @@
                                 <h4 class="modal-title">Login</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             </div>
-                            <div class="modal-body">				
+                            <div class="modal-body">
+                                <div id="googleSignIn" class="form-group">
+                                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                                </div>
+                                
                                 <div class="form-group">
                                     <label id ="usernameLabel">Username</label>
                                     <input type="text" class="form-control" required="required">
@@ -137,6 +144,7 @@
 
 
 
+        <script src="../js/index.js"></script>
 
         <!--<script src="../js/jquery.min.js"></script>
         <script src="../js/popper.min.js"></script>-->
