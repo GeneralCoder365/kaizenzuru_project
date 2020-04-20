@@ -23,12 +23,6 @@ document.getElementById("avatarnameTakenAlert").style.display = "none";
 
 document.getElementById("fieldFillAlert").style.visibility = "hidden";
 
-/*need to code in input requirements checking for:
-  1) First Name(after username) - No spaces, first letter capital, alphabets only
-  2) Last Name(after first name) - No spaces, first letter capital, alphabets only
-  3) Email(after last name) - Get whether email is valid or not from pattern recognition
-*/
-
 var e = document.getElementById("colorSelector");
 var username = "";
 var firstName = "";
@@ -123,8 +117,16 @@ var passwordLength = "";
 var avatarnameLength = "";
 
 var usernamePars = [];
+var fnmPars = [];
+var lnmPars = [];
 var passwordPars = [];
 var avatarnamePars = [];
+
+var fnmFirstCapital = false;
+var fnmOnlyLetters = false;
+
+var lnmFirstCapital = false;
+var lnmOnlyLetters = false;
 
 var passwordNum = false;
 var passwordUppercase = false;
@@ -139,10 +141,14 @@ var avatarnameSpace = false;
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", ":", ";", "<", ">", "?"
                           , "/", "|"];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var nonLetters = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", 
+"-", "_", "+", "=", ":", ";", "<", ">", "?"
+, "/", "|", " "];
 var uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
                         "T", "U", "V", "W", "X", "Y", "Z"];
 
-//string comparison str1.localeCompare(str2);
+
+
 function usernameRequirements() {
   usernameLength = username.length;
   usernamePars = username.split("");
@@ -160,12 +166,73 @@ function usernameRequirements() {
   }
 }
 
+/*need to code in input requirements checking for:
+  1) Email(after last name) - Get whether email is valid or not from pattern recognition
+*/
+
+function fnmSetup() {
+  fnmFirstCapital = false;
+  fnmOnlyLetters = true;
+}
+
 function firstNameRequirements(){
+  fnmSetup();
+  fnmPars = firstName.split("");
+  // checks for first letter capitalized
+  if((fnmPars[0])===(fnmPars[0].toUpperCase())) {
+    fnmFirstCapital = true;
+  } else {
+    fnmFirstCapital = false;
+  }
+
+  // checks for only letters
+  for (var i = 0; i < nonLetters.length; i++){
+    if(fnmPars.includes(nonLetters[i])) {
+        fnmOnlyLetters = false;
+        console.log("belo");
+    }
+  }
+
+  if((fnmFirstCapital==true) && (fnmOnlyLetters==true)) {
+    document.getElementById("firstNameInvalidAlert").style.display = "none";
+    return true;
+  } else if((fnmFirstCapital==false) || (fnmOnlyLetters==false)){
+    document.getElementById("firstNameInvalidAlert").style.display = "inline";
+    return false;
+  }
 
 }
 
+function lnmSetup() {
+  lnmFirstCapital = false;
+  lnmOnlyLetters = true;
+}
+
 function lastNameRequirements(){
-  
+  lnmSetup();
+  lnmPars = lastName.split("");
+  // checks for first letter capitalized
+  if((lnmPars[0])===(lnmPars[0].toUpperCase())) {
+    lnmFirstCapital = true;
+  } else {
+    lnmFirstCapital = false;
+  }
+
+  // checks for only letters
+  for (var i = 0; i < nonLetters.length; i++){
+    if(lnmPars.includes(nonLetters[i])) {
+        lnmOnlyLetters = false;
+        console.log("belo");
+    }
+  }
+
+  if((lnmFirstCapital==true) && (lnmOnlyLetters==true)) {
+    document.getElementById("lastNameInvalidAlert").style.display = "none";
+    return true;
+  } else if((lnmFirstCapital==false) || (lnmOnlyLetters==false)){
+    document.getElementById("lastNameInvalidAlert").style.display = "inline";
+    return false;
+  }
 }
 
 function emailRequirements(){
@@ -377,16 +444,17 @@ function avReqMet() {
 
 
 function checkSubmit() {
-  // temporarily removed  || (usReqMet()==false) || (fnmReqMet()==false) || (lnmReqMet()==false) || (emReqMet()==false) || from  line 381
+  // temporarily removed  || (emReqMet()==false) from  line 381
   if((usernameRequired()==false) || (firstNameRequired()==false) || (lastNameRequired()==false) || (emailRequired()==false) || (passwordRequired()==false) || 
-  (confirmPasswordRequired()==false) || (avatarColorRequired()==false) || (avatarnameRequired()==false) || (shapeRequired()==false) (pwdReqMet()==false) || confPwdReqMet()==false || 
+  (confirmPasswordRequired()==false) || (avatarColorRequired()==false) || (avatarnameRequired()==false) || (shapeRequired()==false) || (usReqMet()==false) || 
+  (fnmReqMet()==false) || (lnmReqMet()==false) || (pwdReqMet()==false) || confPwdReqMet()==false || 
   (avReqMet()==false)) {
     document.getElementById("fieldFillAlert").style.visibility = "visible";
     return false;
-  // temporarily removed && (fnmReqMet()==true) && (lnmReqMet()==true) && (emReqMet()==true) from line 388
+  // temporarily removed && (emReqMet()==true) from line 388
   } else if((usernameRequired()==true) && (firstNameRequired()==true) && (lastNameRequired()==true) && (emailRequired()==true) && (passwordRequired()==true) && 
   (confirmPasswordRequired()==true) && (avatarColorRequired()==true) && (avatarnameRequired()==true) && (shapeRequired()==true) && 
-  (usReqMet()==true) && (pwdReqMet()==true) && confPwdReqMet()==true && 
+  (usReqMet()==true) && (fnmReqMet()==true) && (lnmReqMet()==true) && (pwdReqMet()==true) && confPwdReqMet()==true && 
   (avReqMet()==true)) {
     document.getElementById("fieldFillAlert").style.visibility = "hidden";
     return true;
@@ -397,7 +465,6 @@ function checkSubmit() {
 }
 
 function whenSubmit() {
-  //setValues();
   usernameRequired();
   firstNameRequired();
   lastNameRequired();

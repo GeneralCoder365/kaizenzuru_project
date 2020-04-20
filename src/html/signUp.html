@@ -28,7 +28,7 @@
                     <label id="infoLabel" class="label">All of the options below can be changed later</label>
                     <br><br>
                     <label id ="usernameLabel" class="label">Enter a Username</label>
-                    <label id="usernameDescription"> (4-10 Characters, no spaces)</label>
+                    <label id="usernameDescription"> (4-10 Characters, no spaces, CANNOT be Changed later)</label>
                     <label id="usernameSelectAlert" class="alertRed">x Username not specified!</label>
                     <label id="usernameInvalidAlert" class="alertRed">x Username does not meet the requirements!</label>
                     <label id="usernameTakenAlert" class="alertRed">x Username already taken!</label>
@@ -55,7 +55,7 @@
                     <label id="emailSelectAlert" class="alertRed">x Email not specified!</label>
                     <label id="emailInvalidAlert" class="alertRed">x Email not valid!</label>
                     <label id="emailTakenAlert" class="alertRed">x Email already in use!</label>
-                    <input id="emailInput" type="text" class="form-control" required="required">
+                    <input id="emailInput" type="email" name="email" class="form-control" required="required">
                 </div>
 
                 <div class="form-group" id="passwordStuff">
@@ -64,15 +64,13 @@
                         1 special character, and 1 uppercase letter, no spaces)</label>
                     <label id="passwordSelectAlert" class="alertRed">x Password not specified!</label>
                     <label id="passwordInvalidAlert" class="alertRed">x Password does not meet the requirements!</label>
-                    <!--temporarily removing type="password" from line 48-->
-                    <input id="passwordInput" type="text" class="form-control" required="required">
+                    <input id="passwordInput" type="password" class="form-control" required="required">
 
                     <label id ="confirmPasswordLabel" class="label">Confirm Password</label>
                     <label id="confirmPasswordDescription">(Please Re-enter your Password below)</label>
                     <label id="confirmPasswordSelectAlert" class="alertRed">x Please confirm your password!</label>
                     <label id="confirmPasswordInvalidAlert" class="alertRed">x Passwords do not match!</label>
-                    <!--temporarily removing type="password" from line 73-->
-                    <input id="confirmPasswordInput" type="text" class="form-control" required="required">
+                    <input id="confirmPasswordInput" type="password" class="form-control" required="required">
                 </div>
 
                 <div class="form-group" id="colorStuff">
